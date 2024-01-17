@@ -6,4 +6,5 @@ export const StyledLayoutContainer = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background: #ddd;
 `;
