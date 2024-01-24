@@ -25,6 +25,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Architeture
+
 In this project, we chose to use the Custom Hooks design pattern. Custom Hooks in React allow us to extract component logic into reusable functions. This choice was driven by the need for cleaner code and better reusability. With Custom Hooks, we can encapsulate logic that might be used across multiple components into a single function, making our components more readable and maintainable. It also helps in avoiding duplication of code, thus adhering to the DRY (Don’t Repeat Yourself) principle. Furthermore, Custom Hooks work perfectly with the existing React Hooks like useState, useEffect, and others, allowing us to easily manage state and side effects in our functional components. Overall, Custom Hooks provide a powerful and flexible way to reuse functionality across our React application.
 
 ## Features
