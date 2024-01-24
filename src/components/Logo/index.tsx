@@ -3,11 +3,11 @@ import { StyledLogoContainer } from './styles';
 import { FaSun } from 'react-icons/fa';
 
 
-const Logo: React.FC = () => {
+const Logo = () => {
   return (
-    <StyledLogoContainer>
+    <StyledLogoContainer data-testid="logo-container">
         <h1>WeatherApp</h1>
-        <FaSun size={36} />
+        <FaSun data-testid="sun-icon" size={36} />
     </StyledLogoContainer>
   )
 }

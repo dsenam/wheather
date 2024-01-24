@@ -1,12 +1,11 @@
 import React from "react";
 import { StyledDisplayForecastContainer } from "./styles";
 import Image from "next/image";
-import SkeletonDisplayCard from "../SkeletonDisplayCard";
+
 
 const DisplayForecast = ({
   imageSrc,
   imageAlt,
-  isLoading,
   headerText,
   mainText,
 }: IDisplayForecastProps) => {

@@ -4,7 +4,7 @@ import { StyledDisplayCardContainer } from "../DisplayCard/styles";
 
 const SkeletonDisplayCard = ({lines}: ISkeletonDisplayCardProps) => {
   return (
-    <StyledDisplayCardContainer>
+    <StyledDisplayCardContainer data-testid="skeleton-display-card">
       {Array.from({ length: lines }, (_, index) => (
         <Skeleton key={index} />
       ))}

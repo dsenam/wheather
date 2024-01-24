@@ -1,8 +1,12 @@
 import React from "react";
 
 import { ISwitchProps } from "./type";
-import { StyledSwitchContainer, StyledSwitchLabel, StyledSwitchInput, StyledSwitchSlider } from "./styles";
-
+import {
+  StyledSwitchContainer,
+  StyledSwitchLabel,
+  StyledSwitchInput,
+  StyledSwitchSlider,
+} from "./styles";
 
 const Switch = ({ isSelected, setIsSelected, label }: ISwitchProps) => {
   const toggleSwitch = () => {
@@ -11,13 +15,17 @@ const Switch = ({ isSelected, setIsSelected, label }: ISwitchProps) => {
 
   return (
     <StyledSwitchContainer>
-    <StyledSwitchLabel>
-      <StyledSwitchInput type="checkbox" checked={isSelected} onChange={toggleSwitch} />
-      
-      <StyledSwitchSlider $isSelected={isSelected} />
-      
-    </StyledSwitchLabel>
-    <h4>{label}</h4>
+      <StyledSwitchLabel>
+        <StyledSwitchInput
+          id="input"
+          type="checkbox"
+          checked={isSelected}
+          onChange={toggleSwitch}
+        />
+
+        <StyledSwitchSlider $isSelected={isSelected} />
+      </StyledSwitchLabel>
+      <label htmlFor="input">{label}</label>
     </StyledSwitchContainer>
   );
 };

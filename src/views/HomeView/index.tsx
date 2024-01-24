@@ -43,7 +43,6 @@ const HomeView: React.FC = () => {
             headerText={formatDate(forecastDay.date)}
             imageSrc={`https://${forecastDay.day.condition.icon}`}
             imageAlt={`alt ${forecastDay.day.condition.text}`}
-            isLoading={props.isLoading}
             mainText={`${
               props.isCelsius
                 ? forecastDay.day.avgtemp_c
