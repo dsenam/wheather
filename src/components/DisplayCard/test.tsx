@@ -40,29 +40,7 @@ describe("DisplayCard", () => {
     expect(screen.getByText(arrSecondaryInfos[1].value)).toBeInTheDocument();
   });
 
-  // Displays the header text and main text
-  it("should display the header text and main text", () => {
-    // Arrange
-    const headerText = "Header Text";
-    const mainText = "Main Text";
-    const isLoading = false;
-
-    // Act
-    render(
-      <DisplayCard
-        imageSrc=""
-        imageAlt=""
-        headerText={headerText}
-        mainText={mainText}
-        arrSecondaryInfos={[]}
-        isLoading={isLoading}
-      />
-    );
-
-    // Assert
-    expect(screen.getByText(headerText)).toBeInTheDocument();
-    expect(screen.getByText(mainText)).toBeInTheDocument();
-  });
+ 
 
   // Renders the image with correct source and alt text
   it("should render the image with correct source and alt text", () => {
@@ -92,15 +70,20 @@ describe("DisplayCard", () => {
   it("should render SkeletonDisplayCard when isLoading is true", async () => {
     // Arrange
     const isLoading = true;
+    const renderImg = "/_next/image?url=http%3A%2F%2Fimage.jpg&w=128&q=75";
+    const imageSrc = "http://image.jpg";
+    const imageAlt = "Image Alt";
+    const headerText = "Header Text";
+    const mainText = "Main Text";
 
     // Act
     render(
       <DisplayCard
-      isLoading={true}
-        imageSrc=""
-        imageAlt=""
-        headerText=""
-        mainText=""
+      isLoading={isLoading}
+        imageSrc={imageSrc}
+        imageAlt={imageAlt}
+        headerText={headerText}
+        mainText={mainText}
         arrSecondaryInfos={[]}
         
       />

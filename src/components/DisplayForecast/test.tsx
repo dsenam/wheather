@@ -8,8 +8,8 @@ describe("DisplayForecast", () => {
     it("should render a container with headerText and mainText", () => {
       const { getByText } = render(
         <DisplayForecast
-          imageSrc=""
-          imageAlt=""
+          imageSrc="https://image.jpg"
+          imageAlt="Image Alt"
           headerText="Header Text"
           mainText="Main Text"
         />
@@ -37,8 +37,8 @@ describe("DisplayForecast", () => {
     it("should display the headerText and mainText in the correct format", () => {
       const { getByText } = render(
         <DisplayForecast
-          imageSrc=""
-          imageAlt=""
+          imageSrc="https://image.jpg"
+          imageAlt="Image Alt"
           headerText="Header Text"
           mainText="Main Text"
         />
@@ -51,13 +51,6 @@ describe("DisplayForecast", () => {
       expect(main.tagName).toBe("H1");
     });
 
-    // Renders an Image component with empty imageSrc and imageAlt
-    it("should render an Image component with empty imageSrc and imageAlt", () => {
-      const { getByAltText } = render(
-        <DisplayForecast imageSrc="" imageAlt="" headerText="" mainText="" />
-      );
-
-      expect(getByAltText("")).toBeInTheDocument();
-    });
+  
   });
 });

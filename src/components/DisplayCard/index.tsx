@@ -17,9 +17,7 @@ const DisplayCard = ({
   isLoading,
 }: IDisplayCardProps) => {
   if (isLoading) {
-    return (
-      <SkeletonDisplayCard  lines={4} />
-    );
+    return <SkeletonDisplayCard lines={4} />;
   }
 
   return (
