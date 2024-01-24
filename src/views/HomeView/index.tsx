@@ -15,8 +15,27 @@ const HomeView: React.FC = () => {
 
   return (
     <StyledHomeViewContainer>
-      <GoogleMapsAutocomplete {...props} />
-      <Switch isSelected={props.isSelected} setIsSelected={props.setIsSelected} label={props.switchLabel} />
+      <GoogleMapsAutocomplete
+        handleSelectPlace={props.handleSelectPlace}
+        location={props.location}
+        label={props.autocompleteText}
+      />
+
+      <Switch
+        isSelected={props.isSelected}
+        setIsSelected={props.setIsSelected}
+        label={props.switchLabel}
+      />
+
+      <DisplayCard
+        headerText={props.headerText}
+        arrSecondaryInfos={props.arrSecondaryInfos}
+        imageAlt={props.imageAlt}
+        imageSrc={props.imageSrc}
+        isLoading={props.isLoading}
+        mainText={props.mainText}
+      />
+
       <StyledHomeViewForecastContainer>
         {props?.dataForecast?.map((forecastDay) => (
           <DisplayForecast
@@ -25,11 +44,14 @@ const HomeView: React.FC = () => {
             imageSrc={`https://${forecastDay.day.condition.icon}`}
             imageAlt={`alt ${forecastDay.day.condition.text}`}
             isLoading={props.isLoading}
-            mainText={`${forecastDay.day.avgtemp_c} º`}
+            mainText={`${
+              props.isCelsius
+                ? forecastDay.day.avgtemp_c
+                : forecastDay.day.avgtemp_f
+            } º`}
           />
         ))}
       </StyledHomeViewForecastContainer>
-      <DisplayCard {...props} />
     </StyledHomeViewContainer>
   );
 };

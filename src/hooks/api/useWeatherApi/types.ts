@@ -34,6 +34,7 @@ export interface IWeatherForecastApiResponse {
       date: string;
       
       day: {
+        avgtemp_f: string;
         avgtemp_c: string;
         condition: {
           text: string

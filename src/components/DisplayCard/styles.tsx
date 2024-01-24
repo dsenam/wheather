@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDisplayCardContainer = styled.div`
   width: 100%;
-  min-width: 340px;
+  min-width: 320px;
   background: ${(props) => props.theme.colors.white};
   border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.secondary};
@@ -19,7 +19,7 @@ export const StyledDisplayCardMain = styled.main`
   padding: 0px 16px;
 
   h1 {
-    font-size: 2em;
+    font-size: 1.9em;
   }
 `;
 

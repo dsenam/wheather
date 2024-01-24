@@ -51,13 +51,15 @@ export const useHomeView = () => {
     setLocation(cityName);
   };
 
+  const autocompleteText = "Type your location"
   const headerText = `${dataWeather?.location.name}, ${dataWeather?.location.region}, ${dataWeather?.location.country}`;
   const imageAlt = `icon ${dataWeather?.current.condition.text}`;
   const imageSrc = `https:${dataWeather?.current.condition.icon}`;
-  const mainText = `${dataWeather?.current.temp_c} º`;
+  const mainText = `${isCelsius ? dataWeather?.current.temp_c : dataWeather?.current.temp_f} º`;
   const isLoading =
     isLoadingWeatherRequest || manualLoading || isLoadingWeatherForecast;
   const switchLabel = isCelsius ? "Celsius" : "Fahrenheit"
+
 
   const handlePositionStart = async () => {
     try {
@@ -69,6 +71,8 @@ export const useHomeView = () => {
       setManualLoading(false);
     } catch (error) {
       showPositionError(error as TError);
+    } finally {
+      setManualLoading(false);
     }
   };
 
@@ -88,6 +92,8 @@ export const useHomeView = () => {
     dataForecast: dataForecast?.forecast.forecastday,
     isSelected: isCelsius,
     setIsSelected: setIsCelsius,
-    switchLabel
+    switchLabel,
+    isCelsius,
+    autocompleteText
   };
 };

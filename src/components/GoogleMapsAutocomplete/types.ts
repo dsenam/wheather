@@ -7,4 +7,5 @@ export type TPlace = {
 export interface IGoogleMapsAutocompleteProps {
   handleSelectPlace: (place: TPlace) => void;
   location: string
+  label: string
 }

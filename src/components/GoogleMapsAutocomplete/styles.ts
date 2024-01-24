@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import Autocomplete from "react-google-autocomplete";
 
+export const StyledGoogleMapsAutocompleteContainer = styled.div`
+  label {
+    font-size: 0.8em;
+    
+  }
+`;
+
 export const StyledGoogleMapsAutocomplete = styled(Autocomplete)`
   width: 100%;
-  max-width: 320px;
+  margin-top: 4px;
   border-radius: 4px;
   height: 40px;
   border: none;
