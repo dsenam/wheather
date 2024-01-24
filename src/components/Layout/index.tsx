@@ -1,9 +1,19 @@
 import React from "react";
 import { LayoutProps } from "./types";
-import { StyledLayoutContainer } from "./styled";
+import { StyledLayoutContainer, StyledLayoutContent, StyledLayoutLogo } from "./styles";
+import Logo from "../Logo";
 
 const Layout = ({ children }: LayoutProps) => {
-  return <StyledLayoutContainer>{children}</StyledLayoutContainer>;
+  return (
+    <>
+      <StyledLayoutContainer>
+        <StyledLayoutLogo>
+        <Logo />
+        </StyledLayoutLogo>
+        <StyledLayoutContent>{children}</StyledLayoutContent>
+      </StyledLayoutContainer>
+    </>
+  );
 };
 
 export default Layout;

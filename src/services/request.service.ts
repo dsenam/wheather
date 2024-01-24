@@ -1,6 +1,6 @@
 import { AxiosError, AxiosHeaders } from "axios";
 
-import { formatUrl } from "@/utils/format/formatUrl";
+import { formatUrl } from "@/utils/helpersFunctions/formatUrl";
 import { instance } from "./axios.service";
 
 export async function getData<T>(

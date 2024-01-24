@@ -1,0 +1,3 @@
+interface ISkeletonDisplayCardProps {
+    lines: number
+}

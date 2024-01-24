@@ -1,3 +1,4 @@
+import { API_PATHS } from "@/utils/constants/apiPaths.constants";
 import axios from "axios";
 
 const defaultHeaders = {
@@ -6,7 +7,7 @@ const defaultHeaders = {
   Accept: "application/json; charset=utf-8",
 };
 
-const baseURL = `https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_API_KEY}`;
+const baseURL = API_PATHS.WEATHER.GET;
 
 export const instance = axios.create({
   baseURL,
