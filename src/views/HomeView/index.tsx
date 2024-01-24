@@ -41,7 +41,7 @@ const HomeView: React.FC = () => {
           <DisplayForecast
             key={forecastDay.date}
             headerText={formatDate(forecastDay.date)}
-            imageSrc={`https://${forecastDay.day.condition.icon}`}
+            imageSrc={`https:${forecastDay.day.condition.icon}`}
             imageAlt={`alt ${forecastDay.day.condition.text}`}
             mainText={`${
               props.isCelsius
